@@ -7,6 +7,7 @@ ENV START_PATH /usr/local/bin/start.d
 RUN apk add --no-cache lighttpd
 RUN mkdir -p $START_PATH
 RUN sed -i '/ )/i, ""              =>      "application/octet-stream"' /etc/lighttpd/mime-types.conf
+RUN rm -rf /var/www/localhost
 
 COPY lighttpd.conf /etc/lighttpd
 COPY start.sh /usr/local/bin
