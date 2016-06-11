@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.4
 MAINTAINER Mathieu Viossat <mathieu@viossat.fr>
 
 RUN apk add --no-cache lighttpd
