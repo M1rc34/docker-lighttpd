@@ -2,6 +2,7 @@ FROM alpine:3.4
 MAINTAINER Mathieu Viossat <mathieu@viossat.fr>
 
 RUN apk add --no-cache lighttpd
+RUN sed -i '/= (/a\  "" => "application/octet-stream",' /etc/lighttpd/mime-types.conf
 
 COPY lighttpd.conf /etc/lighttpd
 COPY start.sh /usr/local/bin
