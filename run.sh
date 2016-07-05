@@ -1,10 +1,9 @@
 #!/bin/sh
-set -e
+set -eu
 
-touch /var/log/lighttpd/error.log /var/log/lighttpd/access.log
-chown -R lighttpd /var/log/lighttpd && chmod u+rw -R /var/log/lighttpd
+chown -R lighttpd /var/log/lighttpd && chmod -R u+rw /var/log/lighttpd
 chown -R lighttpd $WWW_ROOT && chmod u+r -R $WWW_ROOT
-tail -f /var/log/lighttpd/error.log /var/log/lighttpd/access.log &
+tail -F -n 0 /var/log/lighttpd/access.log /var/log/lighttpd/error.log 2> /dev/null &
 
 find $START_PATH -type f -exec {} \;
 
