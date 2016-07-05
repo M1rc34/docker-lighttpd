@@ -5,12 +5,12 @@ ENV WWW_ROOT=/var/www/html \
 	START_PATH=/usr/local/bin/start.d
 
 RUN apk add --no-cache lighttpd \
-	&& mkdir -p $START_PATH \
 	&& sed -i '/ )/i, ""              =>      "application/octet-stream"' /etc/lighttpd/mime-types.conf \
 	&& rm -rf /var/www/localhost
+RUN mkdir -p $START_PATH
 
 COPY lighttpd.conf /etc/lighttpd
-COPY start.sh /usr/local/bin
+COPY run.sh /usr/local/bin
 
 VOLUME $WWW_ROOT /var/log/lighttpd
 
@@ -18,4 +18,4 @@ WORKDIR $WWW_ROOT
 
 EXPOSE 80
 
-CMD ["start.sh"]
+CMD ["run.sh"]
