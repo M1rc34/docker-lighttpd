@@ -12,8 +12,6 @@ RUN mkdir -p $START_PATH
 COPY lighttpd.conf /etc/lighttpd
 COPY run.sh /usr/local/bin
 
-VOLUME $WWW_ROOT /var/log/lighttpd
-
 WORKDIR $WWW_ROOT
 
 EXPOSE 80
