@@ -7,6 +7,10 @@ https://www.lighttpd.net/
 - logs to stdout
 - suitable for static files
 - no TLS support, suitable for reverse proxy
+- on startup
+  1. files in `$START_PATH` are executed
+  2. files in `$CONF_PATH` are concatenated as lighttpd config file
+- `$WWW_ROOT` contains the document root
 
 ## Usage
 
