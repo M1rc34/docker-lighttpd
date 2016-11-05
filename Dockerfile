@@ -9,7 +9,7 @@ RUN apk add --no-cache lighttpd \
 	&& rm -rf /var/www/localhost \
 	&& mkdir -p $CONF_PATH $START_PATH
 
-COPY 10-basic.conf $CONF_PATH
+COPY 10-basic.conf 11-compress.conf $CONF_PATH/
 COPY run.sh /usr/local/bin
 
 WORKDIR $WWW_ROOT
