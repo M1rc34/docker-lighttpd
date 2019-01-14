@@ -1,5 +1,4 @@
-FROM alpine:3.7
-MAINTAINER Mathieu Viossat <mathieu@viossat.fr>
+FROM alpine:3.8
 
 ENV WWW_ROOT=/var/www/html \
 	CONF_PATH=/etc/lighttpd/conf.d \

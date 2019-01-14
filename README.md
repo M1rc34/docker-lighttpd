@@ -3,7 +3,7 @@
 lighttpd is a lightweight open-source web server.
 https://www.lighttpd.net/
 
-- Alpine-based, 11 MB
+- Alpine-based
 - logs to stdout
 - suitable for static files
 - no TLS support, suitable for reverse proxy
