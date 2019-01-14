@@ -15,4 +15,5 @@ WORKDIR $WWW_ROOT
 
 EXPOSE 80
 
-CMD ["run.sh"]
+ENTRYPOINT ["run.sh"]
+CMD ["lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]

@@ -10,4 +10,4 @@ find $START_PATH -type f | sort | while read start; do
 done
 find $CONF_PATH -type f | sort | xargs cat > /etc/lighttpd/lighttpd.conf
 
-exec lighttpd -D -f /etc/lighttpd/lighttpd.conf
+exec "$@"
